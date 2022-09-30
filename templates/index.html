@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--jumbotron-->
+<div class="container-fluid">
+    <div class="jumbotron bg-dark" id="jumbotron">
+      <div class="container text">
+        <br />
+        <div class="jumbotext">
+          <h1 class="display-4 text-center lead">Weather App</h1>
+          <p class="lead text-center">Find Out What's The Weather Like</p>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+  <!--form-->
+<div class="container-fluid">
+  <div class="row justify-content-center form">
+  <form method="POST" >
+    <input type="text" class="formtext" name="city" placeholder="City Name" autocomplete="off" autofocus>
+    <button class="btn btn-outline-light ">
+      Add City
+  </button>  
+  </form>  
+</div>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+  {% for catagory,message in messages %}
+    {% set message_class="alert-success" %}
+
+    {% if catagory=="error" %}
+        {% set message_class="alert-danger" %}
+    {% endif %}
+      <div class="alert {{message_class}}" role="alert">{{message}}</div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+<!--cards-->
+<div class="container-fluid ">
+  <div class="row d-flex justify-content-center">
+    {% for weather in weather_data %}
+    <div class="card border-dark mb-3 text-white bg-dark">
+      <div class="card-body">
+        <img  src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="weather icon" style="display: inline; margin-left: +0%;">
+        <h5 class="card-title" style="display: inline;">{{ weather.city}} | {{weather.country}}</h5>
+        <p class="card-text"style="margin-left: +10%;">Temparature : {{weather.temperature}}°C </p>
+        <p class="card-text"style="margin-left: +10%;"><strong class="text-muted">Feels like :{{weather.feels_like}}°C</strong></p>
+        <p class="card-text"style="margin-left: +10%;"><small class="text-muted">Description: {{weather.description}}</small></p>
+        <p class="card-text"style="margin-left: +10%;"><small class="text-muted">Pressure : {{weather.pressure}} millibars</small></p>
+        <p class="card-text"style="margin-left: +10%;"><small class="text-muted">Temp min : {{weather.temp_min}}°C | Temp max : {{weather.temp_max}}°C</small></p>
+      </div>
+      <span class="btn1"><a href="{{ url_for('delete_city',name=weather.city)}}">
+        <button type="button" class="btn btn-outline-light"style="background-color:lightskyblue">Delete</button>
+      </a></span>
+      </div>
+    {% endfor %}
+  </div>  
+</div>
+{% endblock %}

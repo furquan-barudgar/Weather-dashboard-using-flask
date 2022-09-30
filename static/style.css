@@ -1,0 +1,54 @@
+.jumbotron{
+    margin: 2.8125rem 1.875rem 0rem 1.875rem;
+    border-radius: 0.625rem;
+    background: url("images/head.png") center center / cover no-repeat;
+    opacity: 1;
+  }
+  body{
+      background-color: rgb(22, 22, 22);
+      background: url("images/bg.jpg") center center / cover no-repeat;
+  }
+  .formtext{
+  height: 2rem;
+  }
+  .form{
+      margin-top:2rem;
+  }
+  .btn{
+      margin-top: -0.3rem;
+  }
+  .card{
+      margin: auto;
+      min-width: 18.75rem;
+      margin: 2rem;
+      border-radius: 0.625rem;
+      background: url("images/card.jpeg") center center / cover no-repeat;
+  }
+  .text-muted{
+      text-transform:capitalize;
+  }
+  .alert{
+      width:fit-content;
+      margin: auto;
+      margin-top:0.5rem; 
+  }
+  .btn1{
+      margin: auto;
+      margin-bottom: 0.3rem;
+      
+  }
+  html {
+
+   font-size: 100%; 
+  }
+  @media(max-width:998px){
+    html {
+        font-size: 125%;
+  }
+}
+
+@media(max-width:768px){
+    html {
+        font-size: 95%;
+  }
+}
