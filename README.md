@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## :sunny: Weather-dashboard-using-flask :cloud:
 ## Made as a Final Project For CS50x
 #### Video Demo:  <URL HERE>
@@ -13,3 +14,7 @@ The Weather Dashboard App is a simple web application built using Flask, Python,
 <br>
 <br>
 ![sample screen](image.png)
+=======
+## :sunny: Weather-dashboard-using-flask :cloud_with_lightning_and_rain:
+#### 
+>>>>>>> de90db6bc8ea79183bfe69dc77a135ceda628585
